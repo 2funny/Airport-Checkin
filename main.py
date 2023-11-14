@@ -32,6 +32,7 @@ def checkin(email=os.environ.get('EMAIL'), password=os.environ.get('PASSWORD'),
     }
     response = session.post(base_url + '/user/checkin', headers=headers,
                             verify=False)
+    print(response.text)
     response = json.loads(response.text)
     print(response['msg'])
     return response['msg']
